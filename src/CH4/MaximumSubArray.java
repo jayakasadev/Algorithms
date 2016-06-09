@@ -69,6 +69,9 @@ public class MaximumSubArray {
             }
         }
         //System.out.println("In Method: Start: " + start + " Finish: " + finish + " Sum: " + sum);
+        if(sum < 0){
+            return new MaximumSubArray(-1, -1, 0, cpu.elapsedTime());
+        }
         return new MaximumSubArray(start, finish, sum, cpu.elapsedTime());
     }
 
@@ -94,10 +97,19 @@ public class MaximumSubArray {
         //System.out.println("## Left " + leftmsa.getSum() + " Mid  = " + midmsa.getSum() + " Right " + rightmsa.getSum() + "##\n");
 
         if(leftmsa.getSum() > rightmsa.getSum() && leftmsa.getSum() > midmsa.getSum()){
+            if(leftmsa.getSum() < 0){
+                return new MaximumSubArray(-1, -1, 0, cpu.elapsedTime());
+            }
             return new MaximumSubArray(leftmsa, cpu.elapsedTime());
         }
         else if(rightmsa.getSum() > leftmsa.getSum() && rightmsa.getSum() > midmsa.getSum()){
+            if(rightmsa.getSum() < 0){
+                return new MaximumSubArray(-1, -1, 0, cpu.elapsedTime());
+            }
             return new MaximumSubArray(rightmsa, cpu.elapsedTime());
+        }
+        if(midmsa.getSum() < 0){
+            return new MaximumSubArray(-1, -1, 0, cpu.elapsedTime());
         }
         return new MaximumSubArray(midmsa, cpu.elapsedTime());
     }

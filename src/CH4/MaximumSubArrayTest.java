@@ -8,20 +8,23 @@ public class MaximumSubArrayTest {
 
     public static void main(String[] args) {
         StopwatchCPU cpu = new StopwatchCPU();
-        //Brute Test
         int[] in1 = {1, 2, 3, -4, 5};
+        int[] in2 = {1, 2, 3, -4, -2, 5};
+        int[] in3 = {1, 2, 3, -4, -2, 5, 8, 112, -244, 19, -12, -1, -4, -5, -3, -1000, -10, 1001, 2};
+        int[] in4 = {-1, -2, -3, -4, -2, -5, -8, -112, -244, -19, -12, -1, -4, -5, -3, -1000, -10, -1001, -2};
+
+        //BruteForce Test
         System.out.println("Expected Start:0 Finish:4 Sum: 7");
         System.out.println(MaximumSubArray.BruteForce(in1));
 
-        //Brute Test
-        int[] in2 = {1, 2, 3, -4, -2, 5};
         System.out.println("Expected Start:0 Finish:2 Sum: 6");
         System.out.println(MaximumSubArray.BruteForce(in2));
 
-        //Brute Test
-        int[] in3 = {1, 2, 3, -4, -2, 5, 8, 112, -244, 19, -12, -1, -4, -5, -3, -1000, -10, 1001, 2};
         System.out.println("Expected Start:17 Finish:18 Sum: 1003");
         System.out.println(MaximumSubArray.BruteForce(in3));
+
+        System.out.println("Expected Start:-1 Finish:-1 Sum: 0");
+        System.out.println(MaximumSubArray.BruteForce(in4));
 
         //Recursive Test
         System.out.println("\n\nExpected Start:0 Finish:4 Sum: 7");
@@ -32,6 +35,9 @@ public class MaximumSubArrayTest {
 
         System.out.println("Expected Start:17 Finish:18 Sum: 1003");
         System.out.println(MaximumSubArray.Recursive(in3, 0, in3.length-1));
+
+        System.out.println("Expected Start:-1 Finish:-1 Sum: 0");
+        System.out.println(MaximumSubArray.Recursive(in4, 0, in4.length-1));
 
         //largetest
         System.out.println("\nCreating a large array of 100,000 random positive and negative elements");
