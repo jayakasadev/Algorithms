@@ -1,6 +1,5 @@
 package CH4;
 
-import Util.ArraySum;
 import Util.StopwatchCPU;
 
 /**
@@ -115,7 +114,7 @@ public class MaximumSubArray {
     }
 
     /**
-     * Private method for getting the sum of the midpoint
+     * Method for getting the sum of the midpoint
      * @param input
      * @param low
      * @param mid
@@ -153,6 +152,12 @@ public class MaximumSubArray {
         return new MaximumSubArray(left, right, leftsum+rightsum, cpu.elapsedTime());
     }
 
+    /**
+     * Linear Method for finding the maximum subarray
+     *
+     * @param input
+     * @return
+     */
     public static MaximumSubArray Linear(int[] input){
         StopwatchCPU cpu = new StopwatchCPU();
         int sum = 0;
@@ -160,11 +165,10 @@ public class MaximumSubArray {
         int finish = -1;
         int temp = 0;
         for(int a = 0; a < input.length; a++){
-            int prev = temp + input[a];
-            temp = Math.max(input[a], prev);
+            temp = Math.max(input[a], temp + input[a]);
             if(temp > sum){
                 sum = temp;
-                if(temp != prev) {
+                if(temp == input[a]) {
                     start = a;
                 }
                 if(start == -1){
