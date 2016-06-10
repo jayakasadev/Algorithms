@@ -122,7 +122,7 @@ public class MaximumSubArray {
      * @param high
      * @return
      */
-    private static MaximumSubArray CrossingMidpoint(int[] input, int low, int mid, int high){
+    public static MaximumSubArray CrossingMidpoint(int[] input, int low, int mid, int high){
         StopwatchCPU cpu = new StopwatchCPU();
         int left=mid;
         int right = mid+1;
@@ -151,6 +151,31 @@ public class MaximumSubArray {
         }
         //System.out.println("left " + left + " right " + right);
         return new MaximumSubArray(left, right, leftsum+rightsum, cpu.elapsedTime());
+    }
+
+    public static MaximumSubArray Linear(int[] input){
+        StopwatchCPU cpu = new StopwatchCPU();
+        int sum = 0;
+        int start = -1;
+        int finish = -1;
+        int temp = 0;
+        for(int a = 0; a < input.length; a++){
+            int prev = temp + input[a];
+            temp = Math.max(input[a], prev);
+            if(temp > sum){
+                sum = temp;
+                if(temp != prev) {
+                    start = a;
+                }
+                if(start == -1){
+                    start = a;
+                }
+                finish = a;
+            }
+        }
+
+
+        return new MaximumSubArray(start, finish, sum, cpu.elapsedTime());
     }
 
     private int getSum(){

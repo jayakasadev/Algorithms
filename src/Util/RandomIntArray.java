@@ -1,4 +1,4 @@
-package CH4;
+package Util;
 
 import Util.StopwatchCPU;
 

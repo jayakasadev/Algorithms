@@ -1,7 +1,6 @@
 package CH4;
 
-import CH4.MaximumSubArray;
-import CH4.RandomIntArray;
+import Util.RandomIntArray;
 import Util.StopwatchCPU;
 
 public class MaximumSubArrayTest {
@@ -39,6 +38,20 @@ public class MaximumSubArrayTest {
         System.out.println("Expected Start:-1 Finish:-1 Sum: 0");
         System.out.println(MaximumSubArray.Recursive(in4, 0, in4.length-1));
 
+        //linear test
+        System.out.println("\n\nExpected Start:0 Finish:4 Sum: 7");
+        System.out.println(MaximumSubArray.Linear(in1));
+
+        System.out.println("Expected Start:0 Finish:2 Sum: 6");
+        System.out.println(MaximumSubArray.Linear(in2));
+
+        System.out.println("Expected Start:17 Finish:18 Sum: 1003");
+        System.out.println(MaximumSubArray.Linear(in3));
+
+        System.out.println("Expected Start:-1 Finish:-1 Sum: 0");
+        System.out.println(MaximumSubArray.Linear(in4));
+
+
         //largetest
         System.out.println("\nCreating a large array of 100,000 random positive and negative elements");
         int[] largetest = RandomIntArray.randomArray(100000);
@@ -46,7 +59,8 @@ public class MaximumSubArrayTest {
         System.out.println(MaximumSubArray.BruteForce(largetest));
         System.out.println("\n--->Recursive");
         System.out.println(MaximumSubArray.Recursive(largetest, 0, largetest.length-1));
-
+        System.out.println("\n--->Linear");
+        System.out.println(MaximumSubArray.Linear(largetest));
 
         System.out.println("This Entire Thing took: " + cpu.elapsedTime() + " seconds.");
     }
