@@ -159,7 +159,6 @@ public class MaximumSubArray {
      * @return
      */
     public static MaximumSubArray Linear(int[] input){
-        //TODO there is an error in there where the calur of start always seems to be zero which is incorrect.
         //needs debugging
         StopwatchCPU cpu = new StopwatchCPU();
         int sum = 0;
@@ -167,35 +166,36 @@ public class MaximumSubArray {
         int finish = -1;
         int temp = 0;
         for(int a = 0; a < input.length; a++){
-            temp = Math.max(input[a], temp + input[a]);
+            //System.out.println("-->\ttemp = " + temp + " sum = " + sum + " input[a] = " + input[a] + " a = " + a + " start = " + start + " finish = " + finish);
+            int curr = input[a];
+            temp = Math.max(curr, temp + curr);
             if(temp > sum){
                 sum = temp;
-                System.out.println(start + " a is " + a);
-                //System.out.println(temp == input[a]);
-                //System.out.println(temp + " " + input[a]);
-                if(temp == input[a]) {
-                    start = a;
-                }
-                else if(start == -1){
-                    start = a;
-                }
                 finish = a;
             }
+            //System.out.println("<--\ttemp = " + temp + " sum = " + sum + " input[a] = " + input[a] + " a = " + a + " start = " + start + " finish = " + finish +"\n");
         }
-
+        temp = sum;
+        start = finish;
+        while(temp > 0){
+            temp -= input[start];
+            if(temp > 0){
+                start--;
+            }
+        }
 
         return new MaximumSubArray(start, finish, sum, cpu.elapsedTime());
     }
 
-    private int getSum(){
+    int getSum(){
         return sum;
     }
 
-    private int getStart(){
+    int getStart(){
         return start;
     }
 
-    private int getFinish(){
+    int getFinish(){
         return finish;
     }
 

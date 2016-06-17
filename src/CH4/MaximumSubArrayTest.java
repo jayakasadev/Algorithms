@@ -6,7 +6,6 @@ import Util.StopwatchCPU;
 public class MaximumSubArrayTest {
 
     public static void main(String[] args) {
-        /*
         StopwatchCPU cpu = new StopwatchCPU();
         int[] in1 = {1, 2, 3, -4, 5};
         int[] in2 = {1, 2, 3, -4, -2, 5};
@@ -51,20 +50,18 @@ public class MaximumSubArrayTest {
 
         System.out.println("Expected Start:-1 Finish:-1 Sum: 0");
         System.out.println(MaximumSubArray.Linear(in4));
-        */
+
 
         //largetest
         System.out.println("\nCreating a large array of 100,000 random positive and negative elements");
         int[] largetest = RandomIntArray.randomArray(100000);
-
         System.out.println("\n--->BruteForce");
         System.out.println(MaximumSubArray.BruteForce(largetest));
         System.out.println("\n--->Recursive");
         System.out.println(MaximumSubArray.Recursive(largetest, 0, largetest.length-1));
-
         System.out.println("\n--->Linear");
         System.out.println(MaximumSubArray.Linear(largetest));
 
-        //System.out.println("This Entire Thing took: " + cpu.elapsedTime() + " seconds.");
+        System.out.println("This Entire Thing took: " + cpu.elapsedTime() + " seconds.");
     }
 }
