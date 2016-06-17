@@ -159,6 +159,8 @@ public class MaximumSubArray {
      * @return
      */
     public static MaximumSubArray Linear(int[] input){
+        //TODO there is an error in there where the calur of start always seems to be zero which is incorrect.
+        //needs debugging
         StopwatchCPU cpu = new StopwatchCPU();
         int sum = 0;
         int start = -1;
@@ -168,10 +170,13 @@ public class MaximumSubArray {
             temp = Math.max(input[a], temp + input[a]);
             if(temp > sum){
                 sum = temp;
+                System.out.println(start + " a is " + a);
+                //System.out.println(temp == input[a]);
+                //System.out.println(temp + " " + input[a]);
                 if(temp == input[a]) {
                     start = a;
                 }
-                if(start == -1){
+                else if(start == -1){
                     start = a;
                 }
                 finish = a;

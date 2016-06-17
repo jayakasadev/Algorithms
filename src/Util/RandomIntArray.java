@@ -20,7 +20,7 @@ public class RandomIntArray {
             a++;
         }
         //System.out.println("Tf = " + Tf + " To = " + To);
-        System.out.println("Took " + cpu.elapsedTime() + " milliseconds.");
+        //System.out.println("Took " + cpu.elapsedTime() + " seconds to create an array of " + length + " elements.");
         return out;
     }
 }
