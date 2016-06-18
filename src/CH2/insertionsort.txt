@@ -1,0 +1,6 @@
+Took 0.0 seconds to sort input of 10 elements.
+Took 0.0 seconds to sort input of 100 elements.
+Took 0.0 seconds to sort input of 1000 elements.
+Took 0.015625 seconds to sort input of 10000 elements.
+Took 1.3125 seconds to sort input of 100000 elements.
+Took 130.234375 seconds to sort input of 1000000 elements.

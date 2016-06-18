@@ -35,6 +35,7 @@ public class MaximumSubArray {
 
     /**
      * Brute Force Method for finding the maximum subarray
+     * T(n) = 4 + n(5+(5n)) = 4 + 5n + 5n^2 = O(n^2)
      *
      * @param input
      * @return MaximumSubArray object describing the maximum subarray
@@ -76,6 +77,7 @@ public class MaximumSubArray {
 
     /**
      * Recursive Method for finding the maximum subarray
+     * T(n) = 6 + 2T(n/2) + O(n) = O(nlgn)
      *
      * @param input
      * @return MaximumSubArray object describing the maximum subarray
@@ -115,6 +117,8 @@ public class MaximumSubArray {
 
     /**
      * Method for getting the sum of the midpoint
+     * T(n) =  6 + 8n = O(n)
+     *
      * @param input
      * @param low
      * @param mid
@@ -154,6 +158,8 @@ public class MaximumSubArray {
 
     /**
      * Linear Method for finding the maximum subarray
+     * T(n) = 6 + 8n = O(n)
+     * Possible way to reduce to 4+5n?
      *
      * @param input
      * @return
@@ -166,14 +172,12 @@ public class MaximumSubArray {
         int finish = -1;
         int temp = 0;
         for(int a = 0; a < input.length; a++){
-            //System.out.println("-->\ttemp = " + temp + " sum = " + sum + " input[a] = " + input[a] + " a = " + a + " start = " + start + " finish = " + finish);
             int curr = input[a];
             temp = Math.max(curr, temp + curr);
             if(temp > sum){
                 sum = temp;
                 finish = a;
             }
-            //System.out.println("<--\ttemp = " + temp + " sum = " + sum + " input[a] = " + input[a] + " a = " + a + " start = " + start + " finish = " + finish +"\n");
         }
         temp = sum;
         start = finish;

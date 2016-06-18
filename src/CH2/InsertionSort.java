@@ -1,4 +1,4 @@
-package CH1;
+package CH2;
 
 import Util.StopwatchCPU;
 
@@ -9,10 +9,6 @@ import Util.StopwatchCPU;
  * @version 1.0
  */
 public class InsertionSort {
-    private double time;
-    private int length;
-    public InsertionSort(){
-    }
 
     /**
      * Static method defines the insertion sort protocol.
@@ -39,19 +35,9 @@ public class InsertionSort {
         }
     }
 
-    static void testSort(InsertionSort insertionSort, int[] input){
+    static double testSort(int[] input){
         StopwatchCPU cpu = new StopwatchCPU();
         sort(input);
-        insertionSort.setVars(cpu.elapsedTime(), input.length);
-    }
-
-    void setVars(double time, int length){
-        this.time = time;
-        this.length = length;
-    }
-
-    @Override
-    public String toString() {
-        return "This instance of Insertion Sort took " + time + " seconds to sort a list of " + length + " elements.";
+        return cpu.elapsedTime();
     }
 }

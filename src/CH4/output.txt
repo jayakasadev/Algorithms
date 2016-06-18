@@ -1,0 +1,55 @@
+Expected Start:0 Finish:4 Sum: 7
+Start: 0 Finish: 4 Sum: 7
+Took 0.0 seconds.
+Expected Start:0 Finish:2 Sum: 6
+Start: 0 Finish: 2 Sum: 6
+Took 0.0 seconds.
+Expected Start:17 Finish:18 Sum: 1003
+Start: 17 Finish: 19 Sum: 1003
+Took 0.0 seconds.
+Expected Start:-1 Finish:-1 Sum: 0
+Start: -1 Finish: -1 Sum: 0
+Took 0.0 seconds.
+
+
+Expected Start:0 Finish:4 Sum: 7
+Start: 0 Finish: 4 Sum: 7
+Took 0.0 seconds.
+Expected Start:0 Finish:2 Sum: 6
+Start: 0 Finish: 2 Sum: 6
+Took 0.0 seconds.
+Expected Start:17 Finish:18 Sum: 1003
+Start: 17 Finish: 18 Sum: 1003
+Took 0.0 seconds.
+Expected Start:-1 Finish:-1 Sum: 0
+Start: -1 Finish: -1 Sum: 0
+Took 0.0 seconds.
+
+
+Expected Start:0 Finish:4 Sum: 7
+Start: 0 Finish: 4 Sum: 7
+Took 0.0 seconds.
+Expected Start:0 Finish:2 Sum: 6
+Start: 0 Finish: 2 Sum: 6
+Took 0.0 seconds.
+Expected Start:17 Finish:18 Sum: 1003
+Start: 17 Finish: 18 Sum: 1003
+Took 0.0 seconds.
+Expected Start:-1 Finish:-1 Sum: 0
+Start: -1 Finish: -1 Sum: 0
+Took 0.0 seconds.
+
+Creating a large array of 100,000 random positive and negative elements
+
+--->BruteForce
+Start: 30585 Finish: 63013 Sum: 223227
+Took 4.0 seconds.
+
+--->Recursive
+Start: 30585 Finish: 63013 Sum: 223227
+Took 0.140625 seconds.
+
+--->Linear
+Start: 30585 Finish: 63013 Sum: 223227
+Took 0.0 seconds.
+This Entire Thing took: 4.15625 seconds.
