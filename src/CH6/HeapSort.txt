@@ -1,0 +1,74 @@
+Took 0.0 seconds to BuildMaxHeap 10 elements
+Took 0.0 seconds to BuildMaxHeap 100 elements
+Took 0.0 seconds to BuildMaxHeap 100 elements
+Took 0.0 seconds to BuildMaxHeap 1000 elements
+Took 0.0 seconds to BuildMaxHeap 10000 elements
+Took 0.03125 seconds to BuildMaxHeap 100000 elements
+Took 0.25 seconds to BuildMaxHeap 1000000 elements
+Took 2.53125 seconds to BuildMaxHeap 10000000 elements
+Took 30.46875 seconds to BuildMaxHeap 100000000 elements
+#################Testing MaxHeap properties#################
+MaxHeap took 0.0 seconds.
+873
+588
+815
+-31
+-206
+318
+-521
+-456
+-306
+-639
+Extracting Max873
+Extracting Max815
+Extracting Max588
+Extracting Max318
+Extracting Max-31
+Extracting Max-206
+Extracting Max-306
+Extracting Max-456
+Extracting Max-521
+Extracting Max-639
+-639
+-639
+-639
+-639
+-521
+-639
+-521
+-456
+-306
+-639
+MaxHeap took 0.0 seconds.
+880
+85
+267
+-62
+-850
+-967
+-815
+-863
+-181
+554
+MaxHeapInsert took 0.0 seconds.
+880
+85
+267
+-62
+12
+-967
+-815
+-863
+-181
+-850
+HeapSort took 0.0 seconds.
+-967
+-863
+-850
+-815
+-181
+-62
+12
+85
+267
+880
